@@ -1,0 +1,4 @@
+insert into um_kategorija (id, tip) values (1, 'Prva kategorija')
+insert into um_kategorija (id, tip) values (2, 'Druga kategorija')
+insert into um_kategorija (id, tip) values (3, 'Treca kategorija')
+insert into um_kategorija (id, tip) values (4, 'Cetvrta kategorija')

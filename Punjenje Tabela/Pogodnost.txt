@@ -1,0 +1,12 @@
+insert all
+    into um_pogodnost (id, tip, detalj) values (1, 'Mini bar', 'Mali')
+    into um_pogodnost (id, tip, detalj) values (2, 'Mini bar', 'Srednji')
+    into um_pogodnost (id, tip, detalj) values (3, 'Mini bar', 'Veliki')
+    into um_pogodnost (id, tip, detalj) values (4, 'Televizor', 'Mali')
+    into um_pogodnost (id, tip, detalj) values (5, 'Televizor', 'Srednji')
+    into um_pogodnost (id, tip, detalj) values (6, 'Televizor', 'Veliki')
+    into um_pogodnost (id, tip, detalj) values (7, 'Internet', '20mb/s')
+    into um_pogodnost (id, tip, detalj) values (8, 'Internet', '50mb/s')
+    into um_pogodnost (id, tip, detalj) values (9, 'Internet', '150mb/s')
+    into um_pogodnost (id, tip, detalj) values (10, 'Sef', 'Srednji')
+select * from dual;

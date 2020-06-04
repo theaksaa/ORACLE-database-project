@@ -1,0 +1,4 @@
+insert into um_tip_sobe (id, tip) values (1, 'Jednokrevetna')
+insert into um_tip_sobe (id, tip) values (2, 'Dvokrevetna')
+insert into um_tip_sobe (id, tip) values (3, 'Trokrevetna')
+insert into um_tip_sobe (id, tip) values (4, 'Cetvorokrevetna')

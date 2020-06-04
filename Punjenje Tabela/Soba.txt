@@ -1,0 +1,12 @@
+insert all
+    into um_soba (id, sprat, napomena, tip_sobe_id, kategorija_id) values (1, 1, NULL, (select id from um_tip_sobe where tip = 'Jednokrevetna'), (select id from um_kategorija where tip = 'Cetvrta kategorija'))
+    into um_soba (id, sprat, napomena, tip_sobe_id, kategorija_id) values (2, 1, 'Apartman za mladi bracni par', (select id from um_tip_sobe where tip = 'Jednokrevetna'), (select id from um_kategorija where tip = 'Treca kategorija'))
+    into um_soba (id, sprat, napomena, tip_sobe_id, kategorija_id) values (3, 1, 'Apartman za troclanu porodicu', (select id from um_tip_sobe where tip = 'Trokrevetna'), (select id from um_kategorija where tip = 'Treca kategorija'))
+    into um_soba (id, sprat, napomena, tip_sobe_id, kategorija_id) values (4, 2, 'Apartman za cetvoroclanu porodicu', (select id from um_tip_sobe where tip = 'Cetvorokrevetna'), (select id from um_kategorija where tip = 'Druga kategorija'))
+    into um_soba (id, sprat, napomena, tip_sobe_id, kategorija_id) values (5, 2, 'Apartman za dvoclanu porodicu', (select id from um_tip_sobe where tip = 'Dvokrevetna'), (select id from um_kategorija where tip = 'Druga kategorija'))
+    into um_soba (id, sprat, napomena, tip_sobe_id, kategorija_id) values (6, 2, 'Apartman sa pogledom na more', (select id from um_tip_sobe where tip = 'Trokrevetna'), (select id from um_kategorija where tip = 'Druga kategorija'))
+    into um_soba (id, sprat, napomena, tip_sobe_id, kategorija_id) values (7, 3, 'Apartman sa pogledom na more', (select id from um_tip_sobe where tip = 'Trokrevetna'), (select id from um_kategorija where tip = 'Druga kategorija'))
+    into um_soba (id, sprat, napomena, tip_sobe_id, kategorija_id) values (8, 3, 'Lux apartman', (select id from um_tip_sobe where tip = 'Dvokrevetna'), (select id from um_kategorija where tip = 'Prva kategorija'))
+    into um_soba (id, sprat, napomena, tip_sobe_id, kategorija_id) values (9, 3, 'Lux apartman', (select id from um_tip_sobe where tip = 'Trokrevetna'), (select id from um_kategorija where tip = 'Prva kategorija'))
+    into um_soba (id, sprat, napomena, tip_sobe_id, kategorija_id) values (10, 4, 'Predsednicki apartman', (select id from um_tip_sobe where tip = 'Cetvorokrevetna'), (select id from um_kategorija where tip = 'Prva kategorija'))
+select * from dual;

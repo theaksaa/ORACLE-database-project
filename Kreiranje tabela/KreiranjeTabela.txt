@@ -1,0 +1,119 @@
+//==================================================================================================// TIP_SOBE
+
+create table um_tip_sobe
+(
+    id NUMBER(5) CONSTRAINT tip_sobe_id_pk PRIMARY KEY,
+    tip VARCHAR(64) NOT NULL
+)
+
+//==================================================================================================// KATEGORIJA
+
+create table um_kategorija
+(
+    id NUMBER(5) CONSTRAINT kategorija_id_pk PRIMARY KEY,
+    tip VARCHAR(64) NOT NULL
+)
+
+//==================================================================================================// POGODNOST
+
+create table um_pogodnost
+(
+    id NUMBER(5) CONSTRAINT pogodnost_id_pk PRIMARY KEY,
+    tip VARCHAR(64) NOT NULL,
+    detalj VARCHAR(64) NOT NULL
+)
+
+//==================================================================================================// DODATAK
+
+create table um_dodatak
+(
+    id NUMBER(5) CONSTRAINT dodatak_id_pk PRIMARY KEY,
+    soba_id NUMBER(5) NOT NULL,
+    pogodnost_id NUMBER(5) NOT NULL,
+    CONSTRAINT dodatak_soba_id_fk FOREIGN KEY(soba_id) REFERENCES um_soba(id),
+    CONSTRAINT dodatak_pogodnost_id_fk FOREIGN KEY(pogodnost_id) REFERENCES um_pogodnost(id)
+)
+
+//==================================================================================================// SOBA
+
+
+create table um_soba
+(
+    id NUMBER(5) CONSTRAINT soba_id_pk PRIMARY KEY,
+    sprat NUMBER(2) NOT NULL,
+    napomena VARCHAR2(64),
+    tip_sobe_id NUMBER(5) NOT NULL,
+    kategorija_id NUMBER(5) NOT NULL,
+    CONSTRAINT tip_sobe_tip_sobe_id_fk FOREIGN KEY(tip_sobe_id) REFERENCES um_tip_sobe(id),
+    CONSTRAINT kategorija_kategorija_id_fk FOREIGN KEY(kategorija_id) REFERENCES um_kategorija(id)
+)
+
+//==================================================================================================// NACIN UPLATE
+
+create table um_nacin_uplate
+(
+    id NUMBER(5) CONSTRAINT nacin_uplate_id_pk PRIMARY KEY,
+    vrsta VARCHAR2(64) NOT NULL
+)
+
+//==================================================================================================// UPLATA
+
+create table um_uplata
+(
+    id NUMBER(5) CONSTRAINT uplata_id_pk PRIMARY KEY,
+    iznos NUMBER(10) NOT NULL,
+    komentar VARCHAR2(64) NOT NULL,
+    rezervacija_id NUMBER(5) NOT NULL,
+    nacin_uplate_id NUMBER(5) NOT NULL,
+    musterija_id NUMBER(5) NOT NULL,
+    CONSTRAINT uplata_rezervacija_id_fk FOREIGN KEY(rezervacija_id) REFERENCES um_rezervacija(id),
+    CONSTRAINT uplata_nacin_uplate_id_fk FOREIGN KEY(nacin_uplate_id) REFERENCES um_nacin_uplate(id),
+    CONSTRAINT uplata_musterija_id_fk FOREIGN KEY(musterija_id) REFERENCES um_musterija(id)
+)
+
+//==================================================================================================// MUSTERIJA
+
+create table um_musterija
+(
+    id NUMBER(5) CONSTRAINT musterija_id_pk PRIMARY KEY,
+    jmbg VARCHAR2(13) NOT NULL,
+    ime VARCHAR2(256) NOT NULL,
+    prezime VARCHAR2(256) NOT NULL,
+    adresa VARCHAR2(256) NOT NULL,
+    email VARCHAR2(256),
+    telefon VARCHAR2(15) NOT NULL,
+    datum_rodjenja DATE NOT NULL
+)
+
+//==================================================================================================// REZERVACIJA
+
+create table um_rezervacija
+(
+    id NUMBER(5) CONSTRAINT rezervacija_id_pk PRIMARY KEY,
+    datum DATE NOT NULL,
+    vreme TIMESTAMP NOT NULL,
+    pocetak DATE NOT NULL,
+    zavrsetak DATE NOT NULL,
+    rok_uplate DATE NOT NULL,
+    komentar VARCHAR(64) NOT NULL,
+    soba_id NUMBER(5) NOT NULL,
+    gost_id NUMBER(5) NOT NULL,
+    CONSTRAINT rezervacija_soba_id_fk FOREIGN KEY(soba_id) REFERENCES um_soba(id),
+    CONSTRAINT rezervacija_gost_id_fk FOREIGN KEY(gost_id) REFERENCES um_gost(id)
+)
+
+//==================================================================================================// GOST
+
+create table um_gost
+(
+    id NUMBER(5) CONSTRAINT gost_id_pk PRIMARY KEY,
+    jmbg VARCHAR2(13) NOT NULL,
+    ime VARCHAR2(256) NOT NULL,
+    prezime VARCHAR2(256) NOT NULL,
+    adresa VARCHAR2(256) NOT NULL,
+    email VARCHAR2(256),
+    telefon VARCHAR2(15) NOT NULL,
+    datum_rodjenja DATE NOT NULL,
+    rezervacija_id NUMBER(5) NOT NULL,
+    CONSTRAINT gost_rezervacija_id_fk FOREIGN KEY(rezervacija_id) REFERENCES rezervacija(id)
+)
