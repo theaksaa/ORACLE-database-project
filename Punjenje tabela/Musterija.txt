@@ -1,0 +1,12 @@
+insert all
+    into  um_musterija (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (1, '0506000792359' , 'Milica', 'Lukic', 'Slanuska 17, Uzice' , 'milicaluk@gmail.com', '+381645847667', '06/05/2000')
+    into  um_musterija (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (2, '1209974725018' , 'Petar', 'Nikolic', 'Dr. Zorana Djindjica 8, Kragujevac' , 'perica.nikolic@gmail.com','+381602347667', '09/12/1974')
+    into  um_musterija (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (3, '2005993731137' , 'Marta', 'Djokic', 'Kralja Stefana Prvovencanog 10, Nis' , null, '+381635847237', '05/20/1993')
+    into  um_musterija (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (4, '2610995782915' , 'Stanislava', 'Deliblasic', ' Heroja Maričića 2, Kraljevo' , 'stasadeliblasic@gmail.com', '+381605394052', '10/26/1995')
+    into  um_musterija (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (5, '1602997814566' , 'Tijana', 'Ivic', 'Alekse Santica 35, Sombor' , 'ivic.tijana.tiki@gmail.com', '+38164840288', '02/16/1997')
+    into  um_musterija (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (6, '2808002807064' , 'Nikola', 'Ivic', 'Milana Savica 28, Novi Sad' , 'nikola.ivic@gmail.com', '+381645122131', '08/28/2002')
+    into  um_musterija (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (7, '0504983723013' , 'Tatjana', 'Petrovic', 'Svetogorska 1, Kragujevac' , 'petrovictati@gmail.com', '+38164229145', '04/05/1983')
+    into  um_musterija (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (8, '2312998788731' , 'Dragan', 'Nikolic', 'Milovana Glisica 27, Kraljevo' , 'dragannikolic@gmail.com', '+38162066768', '12/23/1998')
+    into  um_musterija (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (9, '0611999882832' , 'Natasa', 'Markovic', 'Franje Kluza 13, Ruma' , null, '+38162982956', '11/06/1999')
+    into  um_musterija (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (10, '0303994894670' , 'Jelena', 'Denic', 'Podrinjska 2, Sremska Mitrovica' , 'jelenajeca.denic@gmail.com', '+38169274321', '03/03/1994')
+select * from dual

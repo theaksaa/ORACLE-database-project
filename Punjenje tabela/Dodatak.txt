@@ -1,0 +1,12 @@
+insert all
+    into  um_dodatak (id, soba_id, pogodnost_id) values (1, 1, 2)
+    into  um_dodatak (id, soba_id, pogodnost_id) values (2, 5, 4)
+    into  um_dodatak (id, soba_id, pogodnost_id) values (3, 1, 7)
+    into  um_dodatak (id, soba_id, pogodnost_id) values (4, 4, 5)
+    into  um_dodatak (id, soba_id, pogodnost_id) values (5, 2, 3)
+    into  um_dodatak (id, soba_id, pogodnost_id) values (6, 4, 8)
+    into  um_dodatak (id, soba_id, pogodnost_id) values (7, 9, 9)
+    into  um_dodatak (id, soba_id, pogodnost_id) values (8, 2, 5)
+    into  um_dodatak (id, soba_id, pogodnost_id) values (9, 3, 9)
+    into  um_dodatak (id, soba_id, pogodnost_id) values (10, 6, 1)
+select * from dual;

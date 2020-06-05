@@ -1,4 +1,4 @@
-//==================================================================================================// TIP_SOBE
+/*==================================================================================================// TIP_SOBE */
 
 create table um_tip_sobe
 (
@@ -6,7 +6,7 @@ create table um_tip_sobe
     tip VARCHAR(64) NOT NULL
 )
 
-//==================================================================================================// KATEGORIJA
+/*==================================================================================================// KATEGORIJA */
 
 create table um_kategorija
 (
@@ -14,7 +14,7 @@ create table um_kategorija
     tip VARCHAR(64) NOT NULL
 )
 
-//==================================================================================================// POGODNOST
+/*==================================================================================================// POGODNOST */
 
 create table um_pogodnost
 (
@@ -23,7 +23,7 @@ create table um_pogodnost
     detalj VARCHAR(64) NOT NULL
 )
 
-//==================================================================================================// DODATAK
+/*==================================================================================================// DODATAK */
 
 create table um_dodatak
 (
@@ -34,8 +34,7 @@ create table um_dodatak
     CONSTRAINT dodatak_pogodnost_id_fk FOREIGN KEY(pogodnost_id) REFERENCES um_pogodnost(id)
 )
 
-//==================================================================================================// SOBA
-
+/*==================================================================================================// SOBA */
 
 create table um_soba
 (
@@ -48,7 +47,7 @@ create table um_soba
     CONSTRAINT kategorija_kategorija_id_fk FOREIGN KEY(kategorija_id) REFERENCES um_kategorija(id)
 )
 
-//==================================================================================================// NACIN UPLATE
+/*==================================================================================================// NACIN UPLATE */
 
 create table um_nacin_uplate
 (
@@ -56,22 +55,7 @@ create table um_nacin_uplate
     vrsta VARCHAR2(64) NOT NULL
 )
 
-//==================================================================================================// UPLATA
-
-create table um_uplata
-(
-    id NUMBER(5) CONSTRAINT uplata_id_pk PRIMARY KEY,
-    iznos NUMBER(10) NOT NULL,
-    komentar VARCHAR2(64) NOT NULL,
-    rezervacija_id NUMBER(5) NOT NULL,
-    nacin_uplate_id NUMBER(5) NOT NULL,
-    musterija_id NUMBER(5) NOT NULL,
-    CONSTRAINT uplata_rezervacija_id_fk FOREIGN KEY(rezervacija_id) REFERENCES um_rezervacija(id),
-    CONSTRAINT uplata_nacin_uplate_id_fk FOREIGN KEY(nacin_uplate_id) REFERENCES um_nacin_uplate(id),
-    CONSTRAINT uplata_musterija_id_fk FOREIGN KEY(musterija_id) REFERENCES um_musterija(id)
-)
-
-//==================================================================================================// MUSTERIJA
+/*==================================================================================================// MUSTERIJA */
 
 create table um_musterija
 (
@@ -85,7 +69,37 @@ create table um_musterija
     datum_rodjenja DATE NOT NULL
 )
 
-//==================================================================================================// REZERVACIJA
+/*==================================================================================================// UPLATA */
+
+create table um_uplata
+(
+    id NUMBER(5) CONSTRAINT uplata_id_pk PRIMARY KEY,
+    iznos NUMBER(10) NOT NULL,
+    komentar VARCHAR2(64) NOT NULL,
+    datum DATE NOT NULL,
+    rezervacija_id NUMBER(5) NOT NULL,
+    nacin_uplate_id NUMBER(5) NOT NULL,
+    musterija_id NUMBER(5) NOT NULL,
+    CONSTRAINT uplata_rezervacija_id_fk FOREIGN KEY(rezervacija_id) REFERENCES um_rezervacija(id),
+    CONSTRAINT uplata_nacin_uplate_id_fk FOREIGN KEY(nacin_uplate_id) REFERENCES um_nacin_uplate(id),
+    CONSTRAINT uplata_musterija_id_fk FOREIGN KEY(musterija_id) REFERENCES um_musterija(id)
+)
+
+/*==================================================================================================// GOST */
+
+create table um_gost
+(
+    id NUMBER(5) CONSTRAINT gost_id_pk PRIMARY KEY,
+    jmbg VARCHAR2(13) NOT NULL,
+    ime VARCHAR2(256) NOT NULL,
+    prezime VARCHAR2(256) NOT NULL,
+    adresa VARCHAR2(256) NOT NULL,
+    email VARCHAR2(256),
+    telefon VARCHAR2(15) NOT NULL,
+    datum_rodjenja DATE NOT NULL
+)
+
+/*==================================================================================================// REZERVACIJA */
 
 create table um_rezervacija
 (
@@ -100,20 +114,4 @@ create table um_rezervacija
     gost_id NUMBER(5) NOT NULL,
     CONSTRAINT rezervacija_soba_id_fk FOREIGN KEY(soba_id) REFERENCES um_soba(id),
     CONSTRAINT rezervacija_gost_id_fk FOREIGN KEY(gost_id) REFERENCES um_gost(id)
-)
-
-//==================================================================================================// GOST
-
-create table um_gost
-(
-    id NUMBER(5) CONSTRAINT gost_id_pk PRIMARY KEY,
-    jmbg VARCHAR2(13) NOT NULL,
-    ime VARCHAR2(256) NOT NULL,
-    prezime VARCHAR2(256) NOT NULL,
-    adresa VARCHAR2(256) NOT NULL,
-    email VARCHAR2(256),
-    telefon VARCHAR2(15) NOT NULL,
-    datum_rodjenja DATE NOT NULL,
-    rezervacija_id NUMBER(5) NOT NULL,
-    CONSTRAINT gost_rezervacija_id_fk FOREIGN KEY(rezervacija_id) REFERENCES rezervacija(id)
 )

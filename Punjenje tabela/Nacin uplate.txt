@@ -1,0 +1,5 @@
+insert all
+    into um_nacin_uplate (id, vrsta) values (1, 'Gotovina')
+    into um_nacin_uplate (id, vrsta) values (2, 'Elektronska')
+    into um_nacin_uplate (id, vrsta) values (3, 'Cek')
+select * from dual;

@@ -1,0 +1,1 @@
+select * from um_gost where id in(select gost_id from um_rezervacija where id in(select rezervacija_id from um_uplata where nacin_uplate_id = (select id from um_nacin_uplate where vrsta = 'Gotovina') and musterija_id is null))

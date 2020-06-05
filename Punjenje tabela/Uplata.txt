@@ -1,0 +1,10 @@
+insert all
+    into  um_uplata (id, iznos, komentar, rezervacija_id, nacin_uplate_id, musterija_id) values (1, 10000, 'Placeno na rate', 6, 3, 7)
+    into  um_uplata (id, iznos, komentar, rezervacija_id, nacin_uplate_id, musterija_id) values (2, 15000, 'Placeno odjednom', 2, 1, NULL)
+    into  um_uplata (id, iznos, komentar, rezervacija_id, nacin_uplate_id, musterija_id) values (3, 25000, 'Placeno na rate', 4, 3, 2)
+    into  um_uplata (id, iznos, komentar, rezervacija_id, nacin_uplate_id, musterija_id) values (4, 10000, 'Placeno odjednom', 5, 2, 10)
+    into  um_uplata (id, iznos, komentar, rezervacija_id, nacin_uplate_id, musterija_id) values (5, 12500, 'Placeno odjednom', 1, 1, 9)
+    into  um_uplata (id, iznos, komentar, rezervacija_id, nacin_uplate_id, musterija_id) values (6, 23000, 'Placeno odjednom', 7, 1, 3)
+    into  um_uplata (id, iznos, komentar, rezervacija_id, nacin_uplate_id, musterija_id) values (7, 14000, 'Placeno odjednom', 10, 2, 4)
+    into  um_uplata (id, iznos, komentar, rezervacija_id, nacin_uplate_id, musterija_id) values (8, 18000, 'Placeno na rate', 3, 3, NULL)
+select * from dual

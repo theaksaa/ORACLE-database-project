@@ -1,0 +1,1 @@
+select ime from um_gost where id in(select gost_id from um_rezervacija where soba_id in(select soba_id from um_dodatak where pogodnost_id in(select id from um_pogodnost where tip = 'Mini bar')))
