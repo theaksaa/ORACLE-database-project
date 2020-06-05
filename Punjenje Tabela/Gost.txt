@@ -1,0 +1,12 @@
+insert all
+    into um_gost (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (1, '2302995772981', 'Petar', 'Milosavljevic', 'Kneza Milosa 12, Kragujevac', 'peromile@gmail.com', '+381645842367', TO_DATE('23/02/1995', 'dd/mm/yyyy'))
+    into um_gost (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (2, '1909001725000', 'Ljubica', 'Krompirovic', 'Daniciceva 23, Kragujevac', 'ljucakrompir@yahoo.com', '+381600504893', TO_DATE('19/09/2001', 'dd/mm/yyyy'))
+    into um_gost (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (3, '0201982805990', 'Milica', 'Petrovic', 'Pozeska 13A, Beograd', NULL, '+381651215169', TO_DATE('02/01/1982', 'dd/mm/yyyy'))
+    into um_gost (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (4, '2212985830021', 'Stefan', 'Mali', 'Veljka Petrovica 123B, Novi Sad', 'malistefoje12@gmail.com', '+381611298364', TO_DATE('22/12/1985', 'dd/mm/yyyy'))
+    into um_gost (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (5, '0105995725110', 'Dragica', 'Peric', 'Sretenskog Ustava 7, Kragujevac', 'daca0105kgsreta@gmail.com', '+381639842156', TO_DATE('01/05/1995', 'dd/mm/yyyy'))
+    into um_gost (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (6, '1604001731111', 'Milisav', 'Martinovic', 'Kraljevacka 65, Nis', 'martin07bond@yahoo.com', '+381691659787', TO_DATE('16/04/2001', 'dd/mm/yyyy'))
+    into um_gost (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (7, '1111002720010', 'Djuroslav', 'Katanic', 'Mostarska 9, Kragujevac', 'djuromajstor@outlook.com', '+381645567821', TO_DATE('11/11/2002', 'dd/mm/yyyy'))
+    into um_gost (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (8, '0807999725010', 'Svetlana', 'Malisic', 'Mostarska 8, Kragujevac', 'malasveta9@gmail.com', '+381655719863', TO_DATE('08/07/1999', 'dd/mm/yyyy'))
+    into um_gost (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (9, '2309997814821', 'Dragutin', 'Potrcko', 'Kosovska 23B , Sombor', 'potrcko12p@gmail.com', '+381619993821', TO_DATE('23/09/1997', 'dd/mm/yyyy'))
+    into um_gost (id, jmbg, ime, prezime, adresa, email, telefon, datum_rodjenja) values (10, '2011972843921', 'Stefan', 'Mirko', 'Brace Sredojev 1, Kikinda', 'steflix41kk@gmail.com', '+381600987513', TO_DATE('20/11/1972', 'dd/mm/yyyy'))
+select * from dual;
