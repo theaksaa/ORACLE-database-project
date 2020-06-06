@@ -1,3 +1,1 @@
-select id as ID, (select tip from um_tip_sobe where id = tip_sobe_id) as Tip, (select tip from um_kategorija where id = kategorija_id) as Kategorija, sprat as Sprat 
-from um_soba 
-where id in (select soba_id from um_rezervacija where (to_date('05/04/2016', 'mm/dd/yyyy') not in (select datum from um_rezervacija)))
+select id as ID, (select tip from um_tip_sobe where id = tip_sobe_id) as Tip, (select tip from um_kategorija where id = kategorija_id) as Kategorija, sprat as Sprat from um_soba where id in (select soba_id from um_rezervacija where (to_date('05/04/2016', 'mm/dd/yyyy') not in (select datum from um_rezervacija)))

@@ -1,1 +1,5 @@
+/*
+Приказати име и презиме госта који одседа у хотелу за све резервације које нису уплаћене до јуна 2016. године.
+*/
+
 select ime, prezime from um_gost where id in(select gost_id from um_rezervacija where id in(select rezervacija_id from um_uplata where datum > '06/01/2016'))

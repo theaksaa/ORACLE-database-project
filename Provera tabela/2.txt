@@ -1,0 +1,5 @@
+/*
+Приказати листу идентификационих бројева резервација, уплаћен износ по резервацији, за све резервације које су уплаћене до данашњег датума, сортиране по идентификацином броју резервације у растући низ.
+*/
+
+select r.id, sum(u.iznos) from um_rezervacija r, um_uplata u where r.id = u.rezervacija_id and u.datum < sysdate group by r.id order by r.id
