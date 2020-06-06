@@ -1,1 +1,5 @@
+/*
+Приказати категорију и спрат, за све оне једнокреветне собе из прве категорије које су слободне.
+*/
+
 select (select tip from um_kategorija where id = kategorija_id) as Kategorija, sprat as Sprat from um_soba where tip_sobe_id = (select id from um_tip_sobe where tip = 'Jednokrevetna') and kategorija_id = (select id from um_kategorija where tip = 'Prva kategorija') and id in(select soba_id from um_rezervacija where sysdate not between pocetak and zavrsetak)

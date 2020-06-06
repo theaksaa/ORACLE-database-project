@@ -1,1 +1,5 @@
+/*
+Приказати укупну сума за уплату за све улате које су извршила сва правна лица у периоду од јануара до априла 2016. године.
+*/
+
 select sum(iznos) "Ukupan Iznos" from um_uplata where musterija_id is not null and datum between(to_date('01/01/2016', 'mm/dd/yyyy')) and to_date('04/01/2016', 'mm/dd/yyyy')
